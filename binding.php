@@ -3,7 +3,7 @@
 $dattim = date("Y-m-d H:i:s");
 $time = date("Y, d, m, H, 0, 0");
 $buero= round(exec("cat /sys/bus/w1/devices/10-00080277ad52/w1_slave | awk -F 't=' '{print $2}' ") / 1000, 1);
-// $aussen1= round(exec("cat /sys/bus/w1/devices/10-000802779cc7/w1_slave | awk -F 't=' '{print $2}' ") / 1000, 1);
+$aussen1= round(exec("cat /sys/bus/w1/devices/10-000802779cc7/w1_slave | awk -F 't=' '{print $2}' ") / 1000, 1);
 
 
 
@@ -41,7 +41,9 @@ $getWifiConfiguration = $master->getWifiConfiguration();
 
 // $aussen1 = $temperature; // Aussentemperatur Bricklet (Fenster Esszimmer)
 
-	$cpu_temperature = round(exec("cat /sys/class/thermal/thermal_zone0/temp ") / 1000, 1);
+
+// Raspberry Pi:
+$cpu_temperature = round(exec("cat /sys/class/thermal/thermal_zone0/temp ") / 1000, 1);
 
 //Uptime -- $uptime
 	$uptime_array = explode(" ", exec("cat /proc/uptime"));
