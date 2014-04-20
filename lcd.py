@@ -68,8 +68,8 @@ if __name__ == "__main__":
         luxwert = 10
         
          
-        print "Or like this: " ,datetime.datetime.now().strftime("%d.%m.%y - %H:%M")
-
+        print "Datum/Zeit: " ,datetime.datetime.now().strftime("%d.%m.%y - %H:%M")
+        print ('') 
         
         # Werte in die Konsole schreiben
         print ('Display Ein/Aus Schalten')
